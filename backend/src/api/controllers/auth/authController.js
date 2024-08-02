@@ -62,7 +62,7 @@ const signup_user = async (req, res) => {
     const hashPassword = await bcrypt.hash(password, salt);
 
     // Generate a unique signature for the user
-    const secretKey = "your_secret_key"; // You can use a more secure and dynamic way to handle this key
+    const secretKey = "ruiwru4398ruirfiqri49q0ir0"; 
     const signature = crypto
       .createHmac("sha256", secretKey)
       .update(email)
