@@ -11,7 +11,7 @@ export const NotAllowed = ({ path }) => {
 
   return (
     <div>
-        <h1>zgFile.</h1>
+        <h1>File.</h1>
     </div>
   )
 }

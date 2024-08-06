@@ -67,7 +67,7 @@ export default function Home() {
     <>
       <div>
         <Head>
-          <title>zgFile Home</title>
+          <title>File Home</title>
         </Head>
 
         <main

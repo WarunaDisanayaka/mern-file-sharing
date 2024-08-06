@@ -59,7 +59,7 @@ export default function Profile() {
       {
         <div>
           <Head>
-            <title>zgFile Home</title>
+            <title>File Home</title>
           </Head>
 
           <main
