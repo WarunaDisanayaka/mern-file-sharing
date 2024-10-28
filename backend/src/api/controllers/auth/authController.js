@@ -62,7 +62,7 @@ const signup_user = async (req, res) => {
     const hashPassword = await bcrypt.hash(password, salt);
 
     // Generate a unique signature for the user
-    const secretKey = "ruiwru4398ruirfiqri49q0ir0"; 
+    const secretKey = "ruiwru4398ruirfiqri49q0ir0";
     const signature = crypto
       .createHmac("sha256", secretKey)
       .update(email)
@@ -175,4 +175,20 @@ const logout_user = async (req, res) => {
   }
 };
 
-export { signup_user, login_user, logout_user };
+const get_all_users = async (req, res) => {
+  try {
+    const users = await User.find({}, "-password -__v"); // Exclude password and other sensitive fields
+    return res.status(200).json({
+      success: true,
+      users,
+    });
+  } catch (err) {
+    console.error(err);
+    return res.status(500).json({
+      success: false,
+      message: "Failed to retrieve users",
+    });
+  }
+};
+
+export { signup_user, login_user, logout_user, get_all_users };
